@@ -21,19 +21,41 @@ namespace Server.Controllers
             return Ok(await _context.templates.ToListAsync());
         }
 
-        [HttpPost]
-        public async Task<ActionResult<List<Template>>> CreateTemplate([FromBody] Template templateRequest)
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetTemplate([FromRoute] Guid id)
         {
-            templateRequest.Id=Guid.NewGuid(); 
-            await _context.templates.AddAsync(templateRequest);
-            await _context.SaveChangesAsync();
-            return Ok(await _context.templates.ToListAsync());
+            var template= await _context.templates.FirstOrDefaultAsync(x => x.Id == id);
+            if (template == null)  
+            {
+                return NotFound();
+            }
+            
+
+            return Ok(template);
         }
 
-        [HttpPut]
-        public async Task<ActionResult<List<Template>>> UpdateTemplate(Template template)
+        /* [HttpPost]
+         public async Task<ActionResult<List<Template>>> CreateTemplate([FromBody] Template templateRequest)
+         {
+             templateRequest.Id=Guid.NewGuid(); 
+             await _context.templates.AddAsync(templateRequest);
+             await _context.SaveChangesAsync();
+             return Ok(await _context.templates.ToListAsync());
+         }*/
+        [HttpPost]
+        public async Task<ActionResult> CreateTemplate([FromBody] Template templateRequest)
         {
-            var dbTemplate = await _context.templates.FindAsync(template.Id);
+            templateRequest.Id = Guid.NewGuid();
+            await _context.templates.AddAsync(templateRequest);
+            await _context.SaveChangesAsync();
+            return Ok(templateRequest);
+        }
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateTemplate([FromRoute] Guid id,Template template)
+        {
+            var dbTemplate = await _context.templates.FindAsync(id);
             if (dbTemplate == null)
             {
                 return BadRequest("Template Not Found !!!");
@@ -48,11 +70,12 @@ namespace Server.Controllers
 
 
             await _context.SaveChangesAsync();
-            return Ok(await _context.templates.ToListAsync());
+            return Ok(dbTemplate);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<List<Template>>> DeleteTemplate(Guid id)
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> DeleteTemplate([FromRoute] Guid id)
         {
             var dbTemplate = await _context.templates.FindAsync(id);
             if (dbTemplate == null)
@@ -62,7 +85,7 @@ namespace Server.Controllers
 
             _context.Remove(dbTemplate);
             await _context.SaveChangesAsync();
-            return Ok(await _context.templates.ToListAsync());
+            return Ok(dbTemplate);
         }
     }
 }

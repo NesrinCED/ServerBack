@@ -12,8 +12,8 @@ using Server.DataContxt;
 namespace Server.Migrations
 {
     [DbContext(typeof(ContextApp))]
-    [Migration("20230214155410_v1")]
-    partial class v1
+    [Migration("20230221093508_TemplateMig")]
+    partial class TemplateMig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

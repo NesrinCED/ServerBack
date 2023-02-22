@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IY9c6LzHq9Kb8tUJo/88vx2uWWazGEBsHhc4GjeBjH4i54rqBpZ8a1jyyU0SqOw+BY6bEBF4EZGFe3xBclMMag==",
+  "dgSpecHash": "eK9MeM4/XG3aI5Wx4oUvx915ZPaLQaA5xvlAbMTNGTXIacrJcghUzfFdosgUqWhBwq0v1OUiQ703Caqg8Vm/Gg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nesrine.masmoudi\\source\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\nesrine.masmoudi\\source\\repos\\ServerBack\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nesrine.masmoudi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\nesrine.masmoudi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

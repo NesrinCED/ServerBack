@@ -3729,11 +3729,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nesrine.masmoudi\\source\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\nesrine.masmoudi\\Source\\Repos\\ServerBack\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\nesrine.masmoudi\\source\\Server\\Server.csproj",
+      "projectPath": "C:\\Users\\nesrine.masmoudi\\Source\\Repos\\ServerBack\\Server.csproj",
       "packagesPath": "C:\\Users\\nesrine.masmoudi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nesrine.masmoudi\\source\\Server\\obj\\",
+      "outputPath": "C:\\Users\\nesrine.masmoudi\\Source\\Repos\\ServerBack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nesrine.masmoudi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3806,7 +3806,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
